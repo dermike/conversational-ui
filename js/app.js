@@ -161,7 +161,7 @@
     let menu = '',
       goBack = chat.querySelector('button.newmenu'),
       againReplies = [
-        'Here\'s a few things what I can tell you about... &#x1F3A4;',
+        'Here\'s a few things that I can tell you about... &#x1F3A4;',
         'Ok, check this out! &#x1F447;',
         'Anything else you\'re interested in? &#x1F64F;'
       ],
