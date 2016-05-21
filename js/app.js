@@ -213,21 +213,24 @@
   };
 
   const toggleContent = article => {
-    let closeButton = content.querySelector('.close'),
-      buttons = chat.querySelectorAll('button');
+    let buttons = chat.querySelectorAll('button');
     if (article) {
       article.classList.add('show');
+      chat.setAttribute('aria-hidden', 'true');
       content.classList.add('show');
       content.setAttribute('aria-hidden', 'false');
-      closeButton.tabIndex = '0';
+      content.tabIndex = '0';
+      content.focus();
     } else {
       content.classList.remove('show');
       content.setAttribute('aria-hidden', 'true');
-      closeButton.tabIndex = '-1';
+      content.tabIndex = '-1';
+      chat.setAttribute('aria-hidden', 'false');
       setTimeout(() => {
         let active = document.querySelector('.content article.show');
         if (active) {
           active.classList.remove('show');
+          chat.querySelector(`button[data-example="${active.id}"]`).focus();
         }
       }, 300);
     }
