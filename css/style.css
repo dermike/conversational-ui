@@ -100,6 +100,9 @@ h4 {
   margin-right: 0.5em;
   cursor: pointer;
   z-index: 101;
+  background-color: transparent;
+  border: none;
+  color: #fff;
 }
 
 .content.show {
