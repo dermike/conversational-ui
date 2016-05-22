@@ -218,12 +218,10 @@
     if (article) {
       article.classList.add('show');
       chat.setAttribute('aria-hidden', 'true');
-      content.classList.add('show');
       content.setAttribute('aria-hidden', 'false');
       content.tabIndex = '0';
       content.focus();
     } else {
-      content.classList.remove('show');
       content.setAttribute('aria-hidden', 'true');
       content.tabIndex = '-1';
       chat.setAttribute('aria-hidden', 'false');
