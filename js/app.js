@@ -205,7 +205,7 @@
     newMessage(randomReply(replies), 'bot');
     menuChoice.submenu.forEach(val => {
       let id = `${menuChoice.id}-${val.id}`;
-      submenu += `<button class="choice submenu" aria-controls="${id}" data-example="${id}">${val.title}</button>`;
+      submenu += `<button class="choice submenu" aria-controls="${id}" data-content="${id}">${val.title}</button>`;
     });
     submenu += `<br /><button class="choice submenu newmenu">${randomReply(userReplies)}</button>`;
     setTimeout(() => {
@@ -229,7 +229,7 @@
         let active = document.querySelector('.content article.show');
         if (active) {
           active.classList.remove('show');
-          chat.querySelector(`button[data-example="${active.id}"]`).focus();
+          chat.querySelector(`button[data-content="${active.id}"]`).focus();
         }
       }, 300);
     }
@@ -242,7 +242,7 @@
     if (clicked.classList.contains('newmenu')) {
       showMenu(true);
     } else {
-      toggleContent(document.getElementById(clicked.getAttribute('data-example')));
+      toggleContent(document.getElementById(clicked.getAttribute('data-content')));
     }
   };
 
