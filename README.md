@@ -8,7 +8,7 @@ Conversational UI web app experiment. [Demo](https://librarian.codes/conversatio
 
 ### js/app.js
 
-Built upon the structure `Category 1 -> Category 2 -> Info` as defined in `js/app.js`. Also check this file for customising the selection of replies, randomly selected for each step. See [this repo](https://github.com/dermike/conversational-ui-referencing-guide) for a real world example using AJAX for content.
+Built upon the structure `Category -> Sub-category -> Info` as defined in `js/app.js`. Also check this file for customising the selection of replies, randomly selected for each step. See [this repo](https://github.com/dermike/conversational-ui-referencing-guide) for a real world example using AJAX for content.
 
 Replies and choices are defined in this file.
 
