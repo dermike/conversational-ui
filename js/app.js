@@ -181,7 +181,7 @@
       });
       setTimeout(() => {
         newMessage(menu);
-      }, 500);
+      }, 300);
     }, 500);
     idle = window.setInterval(() => {
       window.clearInterval(idle);
