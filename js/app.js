@@ -202,14 +202,16 @@
         `Show me the menu again &#x1F60B;`,
         `${menuChoice.title} was interesting, but show me something else... &#x1F612;`
       ];
-    newMessage(randomReply(replies), 'bot');
     menuChoice.submenu.forEach(val => {
       let id = `${menuChoice.id}-${val.id}`;
       submenu += `<button class="choice submenu" aria-controls="${id}" data-content="${id}">${val.title}</button>`;
     });
     submenu += `<br /><button class="choice submenu newmenu">${randomReply(userReplies)}</button>`;
     setTimeout(() => {
-      newMessage(submenu);
+      newMessage(randomReply(replies), 'bot');
+      setTimeout(() => {
+        newMessage(submenu);
+      }, 300);
     }, 500);
   };
 
@@ -275,19 +277,21 @@
 
       if (e.target.classList.contains('showinfo')) {
         let infoReplies = [
-          'Here\'s my website ',
-          'Here you go: ',
-          'Check this one out '
-        ];
-        newMessage(`${randomReply(infoReplies)} <a target="_new" href="https://librarian.codes">https://librarian.codes</a>`, 'bot');
-        setTimeout(() => {
-          let okReplies = [
+            'Here\'s my website ',
+            'Here you go: ',
+            'Check this one out '
+          ],
+          okReplies = [
             'OK &#x1F60E;',
             'How do I get back? &#x1F312;',
             'Ok, thanks! &#x1F44C;'
           ];
-          newMessage(`<button class="choice newmenu showmenu">${randomReply(okReplies)}</button>`);
-        }, 300);
+        setTimeout(() => {
+          newMessage(`${randomReply(infoReplies)} <a target="_new" href="https://librarian.codes">https://librarian.codes</a>`, 'bot');
+          setTimeout(() => {
+            newMessage(`<button class="choice newmenu showmenu">${randomReply(okReplies)}</button>`);
+          }, 300);
+        }, 500);
       }
     }
     if (e.target.classList.contains('close')) {
