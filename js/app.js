@@ -94,9 +94,7 @@
     }
   };
 
-  const randomReply = replies => {
-    return replies[Math.floor(Math.random() * replies.length)];
-  };
+  const randomReply = replies => replies[Math.floor(Math.random() * replies.length)];
 
   const checkUp = () => {
     let lastMessage = document.querySelector('.active'),
