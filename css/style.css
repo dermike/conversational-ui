@@ -79,7 +79,6 @@ h4 {
   transition: transform 0.35s ease;
   -webkit-transform: translateX(-102%);
   transform: translateX(-102%);
-  will-change: transform;
   margin: 0;
   outline: 0;
 }
@@ -140,7 +139,6 @@ h4 {
   position: relative;
   -webkit-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
-  will-change: transform;
   display: table;
 }
 
@@ -154,10 +152,6 @@ h4 {
   background-color: #066;
   color: #fff;
   margin: 0.8em 0 0.8em auto;
-}
-
-.message.user.selected, .message.user.active {
-  will-change: auto;
 }
 
 .message.bot p {
@@ -214,7 +208,6 @@ h4 {
 .message.bot.show {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
-  will-change: auto;
 }
 
 .message.user button {
@@ -231,13 +224,11 @@ h4 {
   transition: transform 0.3s ease;
   -webkit-transform: translateX(768px);
   transform: translateX(768px);
-  will-change: auto;
 }
 
 .message.user button.show {
   -webkit-transform: translateX(0px);
   transform: translateX(0px);
-  will-change: auto;
 }
 
 .message.user button.selected {
