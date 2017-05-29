@@ -246,7 +246,7 @@
       showMenu(true);
     } else {
       toggleContent(document.getElementById(clicked.getAttribute('data-content')));
-      history.pushState({'id': 'content'}, '', `#${clicked.getAttribute('data-content')}`);
+      history.pushState({'id': clicked.getAttribute('data-content')}, '', `#${clicked.getAttribute('data-content')}`);
     }
   };
 
@@ -293,21 +293,31 @@
       }
     }
     if (e.target.classList.contains('close')) {
-      toggleContent();
+      e.preventDefault();
+      history.back();
     }
   });
 
   document.addEventListener('keydown', e => {
-    if (e.keyCode === 27) {
-      toggleContent();
+    if (e.keyCode === 27 && content.getAttribute('aria-hidden') === 'false') {
+      history.back();
     }
   });
 
-  window.addEventListener('popstate', () => {
-    toggleContent();
+  window.addEventListener('popstate', e => {
+    toggleContent(e.state && e.state.id && document.getElementById(e.state.id) ? document.getElementById(e.state.id) : '');
   });
 
   setTimeout(() => {
     init();
   }, 500);
+
+  if (document.getElementById(window.location.hash.split('#')[1])) {
+    let contentId = window.location.hash.split('#')[1];
+    history.replaceState('', '', '.');
+    setTimeout(() => {
+      toggleContent(document.getElementById(contentId));
+      history.pushState({'id': contentId}, '', `#${contentId}`);
+    }, 10);
+  }
 }
