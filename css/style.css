@@ -70,6 +70,7 @@ h4 {
 .chat {
   height: 100%;
   padding: 1em;
+  margin: 0;
 }
 
 .content {
@@ -162,7 +163,7 @@ h4 {
   color: #fff;
 }
 
-.message.user p {
+.message.user p, .message.user nav {
   margin: 0.25em 0 0 0;
   text-align: center;
 }

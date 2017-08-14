@@ -60,7 +60,7 @@
   const content = document.querySelector('.content');
 
   const newMessage = (message, type = 'user') => {
-    let bubble = document.createElement('section'),
+    let bubble = document.createElement('li'),
       slideIn = (el, i) => {
         setTimeout(() => {
           el.classList.add('show');
@@ -72,7 +72,7 @@
       };
     bubble.classList.add('message');
     bubble.classList.add(type);
-    bubble.innerHTML = `<p>${message}</p>`;
+    bubble.innerHTML = type === 'user' ? `<nav>${message}</nav>` : `<p>${message}</p>`;
     chat.appendChild(bubble);
 
     scroll = window.setInterval(scrollDown, 16);
@@ -153,7 +153,7 @@
   const makeUserBubble = el => {
     el.parentNode.parentNode.classList.add('selected');
     el.parentNode.parentNode.classList.remove('active');
-    el.parentNode.innerHTML = el.textContent;
+    el.parentNode.parentNode.innerHTML = `<p>${el.textContent}</p>`;
   };
 
   const showMenu = again => {
@@ -197,7 +197,7 @@
       ],
       userReplies = [
         `I wanna read about something other than ${menuChoice.title.toLowerCase()} &#x1F61C;`,
-        `Show me the menu again &#x1F60B;`,
+        'Show me the menu again &#x1F60B;',
         `${menuChoice.title} was interesting, but show me something else... &#x1F612;`
       ];
     menuChoice.submenu.forEach(val => {
