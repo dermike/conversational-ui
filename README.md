@@ -1,6 +1,6 @@
 # conversational-ui
 
-Conversational UI web app experiment. [Demo](https://librarian.codes/conversational-ui/)
+Conversational UI web app experiment. [Demo](https://librarian.dev/conversational-ui/)
 
 ![](https://raw.githubusercontent.com/dermike/conversational-ui-referencing-guide/master/screenshot/screenshot.jpg)
 
